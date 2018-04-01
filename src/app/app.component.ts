@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
         this.message = "Match :D";
         this.cardsSelected.forEach(card => {
           card.disabled = true;
-          card.setSuccessColor();
+          card.setMatchColor();
         })
         this.cardsSelected = [];
         this.points++;
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
         this.message = "Not Match :(";
         this.points--;
         this.error = true;
-        this.cardsSelected.forEach(c => c.setErrorColor());
+        this.cardsSelected.forEach(c => c.setNotMatchColor());
       }
     }
   }

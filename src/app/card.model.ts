@@ -11,7 +11,7 @@ export class Card {
         this.setDefaultColor();
     }
 
-    setErrorColor() {
+    setNotMatchColor() {
         this.color = 'red';
     }
 
@@ -19,7 +19,7 @@ export class Card {
         this.color = 'yellow';
     }
 
-    setSuccessColor() {
+    setMatchColor() {
         this.color = 'green';
     }
 }
