@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   verseCardValue = "::";
-  cardValues = ["A", "B", "C", "D", "E", "F", "A", "B", "C", "D", "E", "F"];
+  cardValuesTemplate = ["A", "B", "C", "D", "E", "F"];
   cards: Card[] = [];
   cardsSelected: Card[] = [];
   points: number;
@@ -69,10 +69,11 @@ export class AppComponent implements OnInit {
     }
   }
 
-  resetGame() {
-    this.cardValues = this.shuffle(this.cardValues);
+  resetGame() {    
     this.cards = [];
-    this.cardValues.forEach(val => this.cards.push(new Card(val)))
+    let cardValues = this.cardValuesTemplate.concat(this.cardValuesTemplate);    
+    cardValues = this.shuffle(cardValues);
+    cardValues.forEach(val => this.cards.push(new Card(val)))    
     this.points = 0;
     this.message = "Choose a card";
     this.error = false;
