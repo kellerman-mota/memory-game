@@ -1,0 +1,18 @@
+ul {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;    
+    list-style-type: none;    
+}
+
+div.card{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;    
+}
+
+.center-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
