@@ -71,6 +71,7 @@ export class AppComponent implements OnInit {
 
   resetGame() {    
     this.cards = [];
+    this.cardsSelected = [];
     let cardValues = this.cardValuesTemplate.concat(this.cardValuesTemplate);    
     cardValues = this.shuffle(cardValues);
     cardValues.forEach(val => this.cards.push(new Card(val)))    
