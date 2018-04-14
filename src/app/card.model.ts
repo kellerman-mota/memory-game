@@ -12,14 +12,14 @@ export class Card {
     }
 
     setNotMatchColor() {
-        this.color = 'red';
+        this.color = '#C54023';
     }
 
     setDefaultColor() {
-        this.color = 'yellow';
+        this.color = '#EEB422';
     }
 
     setMatchColor() {
-        this.color = 'green';
+        this.color = '#58C565';
     }
 }

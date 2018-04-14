@@ -1,17 +1,44 @@
-<div style="text-align:center">
-  <h1>
-    Memory Game [{{points}} Points]
-  </h1>
-  <h2 [ngStyle]="error?{'color': 'red'}:''">{{message}}</h2>  
-  <button (click)="resetGame()">Reset Game</button>   
-</div>
-<div class="center-align">
-  <ul>
-    <li *ngFor="let item of cards; index as i">
-      <div class="card center-align" (click)="turn(item)" [ngStyle]="{'background-color': item.color}">
-        <h2>{{item.showValue ? item.value : verseCardValue}}</h2>
+<div class="jumbotron">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          <div class="row">
+            <div class="col-md-8" id="app-header-title">
+              Memory Game
+            </div>
+            <div class="col-md-2" style="text-align: center">
+              <span [ngStyle]="error?{'color': '#C54023'}:''">{{message}}</span>
+            </div>
+            <div class="col-md-2" style="text-align: center">
+              <span [ngStyle]="error?{'color': '#C54023'}:''">[{{points}} Points]</span>
+            </div>
+          </div>
+        </h3>
       </div>
-      <p></p>
-    </li>
-  </ul>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="#" (click)="resetGame()">
+              <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Reset Game</a>
+          </div>
+        </div>
+        <p></p>
+        <div class="row center-align">
+          <ul>
+            <li *ngFor="let item of cards; index as i">
+              <div class="card" (click)="turn(item)" [ngStyle]="{'background-color': item.color}">
+                <span *ngIf="item.showValue" class="content">{{item.value}}</span>
+                <span *ngIf="!item.showValue" class="content glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+              </div>
+              <p></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel-footer" style="text-align: center">
+        Developed by Kellerman Mota
+      </div>
+    </div>
+  </div>
 </div>

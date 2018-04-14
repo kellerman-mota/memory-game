@@ -6,13 +6,33 @@ ul {
 }
 
 div.card{
-    width: 5em;
-    height: 5em;
-    border: 1px solid;    
+    width: 100px;
+    height: 120px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    border-radius: 5px;
+    text-align: center;
+    display: table-cell; 
+    vertical-align: middle;    
+}
+
+div.card span.content{    
+    font-size: 40px;
 }
 
 .center-align{
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
+    margin-right: 15px;    
+}
+
+#app-header-title{
+    text-align: center;
+    color:  #8A2BE2;
+}
+
+@media screen and (min-width: 48em){
+    #app-header-title{
+        text-align: left;
+    }
 }

@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
   validateSelectedCards() {
     if (this.cardsSelected.length == 2) {
       if (this.cardsSelected[0].value == this.cardsSelected[1].value) {
-        this.message = "Match :D";
+        this.message = "Match";
         this.cardsSelected.forEach(card => {
           card.disabled = true;
           card.setMatchColor();
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
         this.cardsSelected = [];
         this.points++;
       } else {
-        this.message = "Not Match :(";
+        this.message = "Not Match";
         this.points--;
         this.error = true;
         this.cardsSelected.forEach(c => c.setNotMatchColor());
