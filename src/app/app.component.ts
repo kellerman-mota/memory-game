@@ -1,5 +1,6 @@
 import { Card } from './card.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,10 @@ export class AppComponent implements OnInit {
   points: number;
   message: string;
   error: Boolean;
+
+  constructor(public toastr: ToastsManager, vcr: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vcr);        
+ }
 
   ngOnInit(): void {
     this.resetGame();
@@ -43,9 +48,11 @@ export class AppComponent implements OnInit {
         })
         this.cardsSelected = [];
         this.points++;
+        this.showSuccess("Match");
       } else {
         this.message = "Not Match";
         this.points--;
+        this.showError("Not Match");
         this.error = true;
         this.cardsSelected.forEach(c => c.setNotMatchColor());
       }
@@ -78,6 +85,14 @@ export class AppComponent implements OnInit {
     this.points = 0;
     this.message = "Choose a card";
     this.error = false;
+  }
+
+  showSuccess(msg: string) {
+    this.toastr.success(msg, 'Success!');
+  }
+
+  showError(msg: string) {
+    this.toastr.error(msg, 'Oops!');
   }
 
   // copy/paste from stackoverflow...rsrsrs
