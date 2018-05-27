@@ -27,9 +27,8 @@
         <div class="row center-align">
           <ul>
             <li *ngFor="let item of cards; index as i">
-              <div class="card" (click)="turn(item)" [ngStyle]="{'background-color': item.color}">
-                <span *ngIf="item.showValue" class="content {{item.value}}"></span>
-                <span *ngIf="!item.showValue" class="content {{verseIcon}}" aria-hidden="true"></span>
+              <div class="card" (click)="turn(item)" [ngStyle]="{'background-color': item.color}">                
+                <span class="content {{ item.showFrontValue ? item.frontValue : item.verseValue }}" aria-hidden="true"></span>
               </div>
               <p></p>
             </li>
