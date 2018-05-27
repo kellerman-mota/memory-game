@@ -8,9 +8,14 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-  verseCardValue = "::";
-  cardValuesTemplate = ["A", "B", "C", "D", "E", "F"];
+  verseIcon = "glyphicon glyphicon-question-sign";
+  cardValuesTemplate = [
+    "glyphicon glyphicon-heart", 
+    "glyphicon glyphicon-plane", 
+    "glyphicon glyphicon-leaf",
+    "glyphicon glyphicon-music", 
+    "glyphicon glyphicon-cloud", 
+    "glyphicon glyphicon-star"];
   cards: Card[] = [];
   cardsSelected: Card[] = [];
   points: number;
@@ -18,8 +23,8 @@ export class AppComponent implements OnInit {
   error: Boolean;
 
   constructor(public toastr: ToastsManager, vcr: ViewContainerRef) {
-    this.toastr.setRootViewContainerRef(vcr);        
- }
+    this.toastr.setRootViewContainerRef(vcr);
+  }
 
   ngOnInit(): void {
     this.resetGame();
@@ -76,12 +81,12 @@ export class AppComponent implements OnInit {
     }
   }
 
-  resetGame() {    
+  resetGame() {
     this.cards = [];
     this.cardsSelected = [];
-    let cardValues = this.cardValuesTemplate.concat(this.cardValuesTemplate);    
+    let cardValues = this.cardValuesTemplate.concat(this.cardValuesTemplate);
     cardValues = this.shuffle(cardValues);
-    cardValues.forEach(val => this.cards.push(new Card(val)))    
+    cardValues.forEach(val => this.cards.push(new Card(val)))
     this.points = 0;
     this.message = "Choose a card";
     this.error = false;
