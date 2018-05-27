@@ -8,10 +8,10 @@
               Memory Game
             </div>
             <div class="col-md-2" style="text-align: center">
-              <span [ngStyle]="error?{'color': '#C54023'}:''">{{message}}</span>
+              <span [ngStyle]="twoCardsUnmatch?{'color': '#C54023'}:''">{{message}}</span>
             </div>
             <div class="col-md-2" style="text-align: center">
-              <span [ngStyle]="error?{'color': '#C54023'}:''">[{{points}} Points]</span>
+              <span [ngStyle]="twoCardsUnmatch?{'color': '#C54023'}:''">[{{points}} Points]</span>
             </div>
           </div>
         </h3>

@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
   private validateEndOfGame() {
     if (this.cards.filter(card => !card.showFrontValue).length == 0) {
       this.message = "End of the game!";
-      if(confirm(`End of the game.\nYou make [${this.points} point(s)].\n\nDo you want try again?`)){
+      if(confirm(`End of the game.\nYou make ${this.points} point(s).\nDo you want try again?`)){
         this.resetGame();
       }
     }
